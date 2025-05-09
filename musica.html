@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Musica - Niccolò Scarano</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="chatbot.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <h1 class="logo">Musica Originale</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="vispo.html">Progetto VISPO</a></li>
+          <li><a href="musica.html">Musica</a></li>
+          <li><a href="#contatti">Contatti</a></li>
+        </ul>
+      </nav>
+      <button id="theme-toggle">🌙</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2>La nostra canzone originale</h2>
+      <p>[Descrivi il progetto musicale]</p>
+      <audio controls>
+        <source src="[INSERISCI-IL-TUO-FILE-AUDIO.mp3]" type="audio/mpeg">
+        Il tuo browser non supporta l'audio HTML5.
+      </audio>
+    </section>
+
+    <section id="contatti">
+      <h2>Contatti</h2>
+      <p>📧 Email: [Inserisci la tua email]</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Niccolò Scarano — IIS Galilei-Artiglio. Tutti i diritti riservati.</p>
+    </div>
+  </footer>
+
+  <div id="chatbot" class="chatbot hidden">
+    <div class="chatbot-header">Galibot 🤖</div>
+    <div class="chatbot-messages" id="chatbot-messages"></div>
+    <input type="text" id="chatbot-input" placeholder="Scrivi qualcosa..." />
+  </div>
+
+  <button id="chatbot-toggle">💬</button>
+</body>
+</html>
