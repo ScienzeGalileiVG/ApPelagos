@@ -38,9 +38,39 @@
             <source src="videoVISPOfinal.mp4" type="video/mp4">
             Il tuo browser non supporta il video.
         </video>
+
+        <!-- Controlli aggiuntivi -->
+        <div id="video-controls">
+            <button id="toggle-sound">🔊 Attiva Audio</button>
+            <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.5">
+        </div>
     </div>
 </section>
 
+<script>
+    const videoElement = document.getElementById('background-video');
+    const toggleSoundButton = document.getElementById('toggle-sound');
+    const volumeSlider = document.getElementById('volume-slider');
+
+    // Imposta il volume iniziale
+    videoElement.volume = 0.5;
+
+    // Attiva/Disattiva l'audio al click
+    toggleSoundButton.addEventListener('click', () => {
+        if (videoElement.muted) {
+            videoElement.muted = false;
+            toggleSoundButton.textContent = "🔇 Disattiva Audio";
+        } else {
+            videoElement.muted = true;
+            toggleSoundButton.textContent = "🔊 Attiva Audio";
+        }
+    });
+
+    // Regola il volume con lo slider
+    volumeSlider.addEventListener('input', (e) => {
+        videoElement.volume = e.target.value;
+    });
+</script>
     <main>
         <div class="project">
             <h2>Progetto VISPO</h2>
