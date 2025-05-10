@@ -47,6 +47,18 @@
     </footer>
 
     <script src="script.js"></script>
+<script>
+    const videoElement = document.getElementById('background-video');
+
+    videoElement.onerror = function () {
+        console.error("Errore nel caricamento del video. Controlla il percorso o il nome del file.");
+        alert("Errore nel caricamento del video. Controlla il percorso o il nome del file.");
+    };
+
+    videoElement.onloadeddata = function () {
+        console.log("Video caricato correttamente.");
+    };
+</script>
 
 	<!-- Chatbot -->
 <div id="chatbot">
