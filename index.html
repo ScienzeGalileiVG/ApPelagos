@@ -5,6 +5,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Progetti scolastici - 2BSTEM</title>
     <link rel="stylesheet" href="style.css">
+<style>/* Stili generali */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Sezione intro video */
+#intro-video {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Stile del paragrafo del progetto ApPelagos */
+#intro-video p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Titoli */
+h2 {
+    font-size: 2em;
+    color: #007acc;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 1.5em;
+    color: #007acc;
+    margin-bottom: 15px;
+}
+
+/* Link al video di Canva */
+.video-link {
+    display: inline-block;
+    background-color: #007acc;
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.video-link:hover {
+    background-color: #005fa3;
+}
+
+/* Video player */
+#local-video {
+    margin-top: 20px;
+}
+
+/* Controlli del video */
+#video-controls {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#toggle-sound {
+    background-color: #007acc;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#toggle-sound:hover {
+    background-color: #005fa3;
+}
+
+#volume-slider {
+    width: 150px;
+}
+</style>
 </head>
 <body>
     <header>
@@ -22,6 +109,9 @@
     </header>
 
 <section id="intro-video">
+    <!-- Descrizione del progetto ApPelagos -->
+    <p><strong>Il progetto ApPelagos</strong> consiste in una applicazione per smartphone ed un sito interamente realizzati dalla classe che evidenziano il ruolo del Santuario Pelagos, la bellezza e le criticità che insistono su questo ecosistema. Il nome del progetto è un gioco di parole tra il sostantivo “applicazione” e la parola “Pelagos”. Gli studenti, dopo le lezioni svolte dagli specialisti in classe, si sono autonomamente suddivisi in 6 gruppi dediti a vari aspetti del progetto: gruppo del sito, gruppo della grafica, gruppo dell’App, gruppo dell’interfono, gruppo canzone e gruppo video.</p>
+
     <h2>🎥 Guarda i video del progetto VISPO</h2>
 
     <!-- Link al video su Canva -->
@@ -46,6 +136,31 @@
         </div>
     </div>
 </section>
+
+<script>
+    const videoElement = document.getElementById('background-video');
+    const toggleSoundButton = document.getElementById('toggle-sound');
+    const volumeSlider = document.getElementById('volume-slider');
+
+    // Imposta il volume iniziale
+    videoElement.volume = 0.5;
+
+    // Attiva/Disattiva l'audio al click
+    toggleSoundButton.addEventListener('click', () => {
+        if (videoElement.muted) {
+            videoElement.muted = false;
+            toggleSoundButton.textContent = "🔇 Disattiva Audio";
+        } else {
+            videoElement.muted = true;
+            toggleSoundButton.textContent = "🔊 Attiva Audio";
+        }
+    });
+
+    // Regola il volume con lo slider
+    volumeSlider.addEventListener('input', (e) => {
+        videoElement.volume = e.target.value;
+    });
+</script>
 
 <script>
     const videoElement = document.getElementById('background-video');
